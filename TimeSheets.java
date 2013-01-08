@@ -4,31 +4,32 @@ public class TimeSheets {
 
 	//Zone Functions
 	//Zone 1 (100-199) $10 per hour & after 30hrs, 15$
-	public static double Zone1(){
+	public static double Zone1(double i){
+	
 
 		return 0;
 	}
 
 	//Zone 2 (200-299) $7.50 per hour & after 40hrs, 15$
-	public static double Zone2(){
+	public static double Zone2(double i){
 
 		return 0;
 	}
 
 	//Zone 3 (300-399) $9.25 per hour & after 20hrs, 10.50$
-	public static double Zone3(){
+	public static double Zone3(double i){
 
 		return 0;
 	}
 
 	//Zone 4 (400-499) $13.50 Sat and Sun, others $6.75
-	public static double Zone4(){
+	public static double Zone4(double i){
 
 		return 0;
 	}
 
 	//Zone 5 (500-599) $8 first 6 hours of day, 12$ rest hours
-	public static double Zone5(){
+	public static double Zone5(double i){
 
 		return 0;
 	}
@@ -99,6 +100,7 @@ public class TimeSheets {
 		double totalTime = 0;
 		double Sat = 0;
 		double Sun = 0;
+		double output = 0;
 		
 		//User Input
 		String userInput = input.nextLine();
@@ -135,7 +137,7 @@ public class TimeSheets {
 				if(findHours(dayData) > 6)
 				{
 					first = 6;
-					second = findHours(dayData) - 6;
+					second = findHours(dayData) - 6 + second;
 				}
 				totalTime = first*8 + second*12 + findHours(dayData) + totalTime;
 			}
@@ -149,8 +151,21 @@ public class TimeSheets {
 				String[] dayData = data[i].split(",");
 				totalTime = totalTime + findHours(dayData); //total time
 			}
-		}
-		
-	}
 
+			if(Zone==1)
+			{
+			    output = Zone1(totalTime);
+			}
+
+			else if(Zone==2)
+			{
+			    output = Zone2(totalTime);
+			}
+
+			else if(Zone==3)
+			{
+			    output = Zone3(totalTime);
+			}
+		}		
+	}
 }
