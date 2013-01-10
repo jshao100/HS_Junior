@@ -1,3 +1,8 @@
+/* James Shao
+ * The Dalton School
+ * #3055
+ */
+
 import java.util.Scanner;
 
 public class TimeSheets {
