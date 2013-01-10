@@ -5,38 +5,28 @@ public class TimeSheets {
 	//Zone Functions
 	//Zone 1 (100-199) $10 per hour & after 30hrs, 15$
 	public static double Zone1(double i){
-		if(i>30)
-		{
-			return 300 + (i-30)*15;
-		}
-		else
-		{
-			return i*10;
-		}
+		
+		if(i>30)	return 300 + (i-30)*15;
+			
+		else		return i*10;
+			
 	}
 
 	//Zone 2 (200-299) $7.50 per hour & after 40hrs, 15$
 	public static double Zone2(double i){
-		if(i>40)
-		{
-			return 300 + (i-40)*15;
-		}
-		else
-		{
-			return i*7.5;
-		}
+		
+		if(i>40)	return 300 + (i-40)*15;
+
+		else		return i*7.5;
+
 	}
 
 	//Zone 3 (300-399) $9.25 per hour & after 20hrs, 10.50$
 	public static double Zone3(double i){
-		if(i>20)
-		{
-			return 185 + (i-20)*10.50;
-		}
-		else
-		{
-			return i*9.25;
-		}
+		
+		if(i>20)	return 185 + (i-20)*10.50;
+
+		else		return i*9.25;
 	}
 
 	//Zone 4 (400-499) $13.50 Sat and Sun, others $6.75
@@ -223,7 +213,7 @@ public class TimeSheets {
          System.out.println("\n" + totalTime);
 			 */
 
-			System.out.println("$" + output);
+			System.out.printf("$" + "%.2f", output);
 		}
 	}
 }
